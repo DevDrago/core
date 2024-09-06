@@ -63,9 +63,9 @@ const form = useForm({
   },
   settings: (f) => {
     return {
-      url: f?.settings.mode === FORM_MODE.update ? `artists/${f.record.value?.id}/` : 'artists/',
+      url: 'artists/',
       title: '{{ Crear artista | Actualizar artista }}',
-      lookupField: null,
+      lookupField: 'id',
     }
   },
 })
