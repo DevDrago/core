@@ -2,7 +2,7 @@ import type { ISetListDataHandler, NormalizedColumn, SetListDataCommand } from '
 import { Bus, FORM_MODE, HttpService, IFormStore, ITableStore, PaginateResult, SetFieldsValuesCommand, injecting } from '@fancy-crud/core'
 import type { ObjectWithRawFields } from '../..'
 import { useForm } from '../../forms'
-import _ from 'lodash.clonedeep'
+import cloneDeep from 'lodash.clonedeep'
 
 export class SetListDataWithReactivityFormsHandler implements ISetListDataHandler {
   constructor(
@@ -52,7 +52,7 @@ export class SetListDataWithReactivityFormsHandler implements ISetListDataHandle
 
     items = items.map((record: any) => {
       const $form = useForm({
-        fields: _.cloneDeep(allowInputFields),
+        fields: cloneDeep(allowInputFields),
         settings: {
           ...settings,
           mode: FORM_MODE.update,
