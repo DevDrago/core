@@ -2,7 +2,7 @@ import type { ISetListDataHandler, NormalizedColumn, SetListDataCommand } from '
 import { Bus, FORM_MODE, HttpService, IFormStore, ITableStore, PaginateResult, SetFieldsValuesCommand, injecting } from '@fancy-crud/core'
 import type { ObjectWithRawFields } from '../..'
 import { useForm } from '../../forms'
-import _ from 'lodash'
+import _ from 'lodash.clonedeep'
 
 export class SetListDataWithReactivityFormsHandler implements ISetListDataHandler {
   constructor(
