@@ -33,7 +33,7 @@ const state = reactive({
 })
 
 const attributes = computed(() => {
-  const { wrapper, modelValue, hint, errorMessage, type, class: _class, ...field } = props.field
-  return { ...wrapper, ...field } as any
+  const { wrapper, modelValue, hint, errorMessage, rules, error, type, class: _class, ...field } = props.field
+  return { ...wrapper, ...field }
 })
 </script>
