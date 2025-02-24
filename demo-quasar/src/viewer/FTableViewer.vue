@@ -112,9 +112,4 @@ const table = useTable({
     rowsPerPage: 10,
   },
 })
-
-setTimeout(() => {
-  displayDialog.value = false
-  console.log('executed')
-}, 10000)
 </script>
