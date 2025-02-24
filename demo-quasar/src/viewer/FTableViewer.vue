@@ -9,8 +9,10 @@
 </template>
 
 <script lang='ts' setup>
-import { FieldType, useForm, useTable, FORM_MODE } from '@fancy-crud/vue'
+import { FieldType, useForm, useTable } from '@fancy-crud/vue'
 import { z } from 'zod'
+
+const displayDialog = ref(false)
 
 const form = useForm({
   id: 'formulario',
@@ -28,8 +30,8 @@ const form = useForm({
       type: FieldType.select,
       label: 'Gender',
       rules: (value: any) => ({ value, rule: z.string().nonempty() }),
-      multiple: true,
-      exclude: true,
+      options: ['m', 'f'],
+      multiple: false,
       wrapper: {
         class: 'col-span-6',
       },
@@ -68,6 +70,12 @@ const form = useForm({
       lookupField: 'id',
     }
   },
+  responseInterceptor: {
+    201: (response: any) => {
+      displayDialog.value = false
+      return response
+    },
+  }
 })
 
 const table = useTable({
@@ -95,12 +103,18 @@ const table = useTable({
     },
     actions: { value: 'actions', label: '', align: 'left' },
   },
-  settings: {
+  settings: () => ({
     url: 'artists/',
     columnsOrder: ['actions', '...'],
-  },
+    displayFormDialog: displayDialog.value,
+  }),
   pagination: {
     rowsPerPage: 10,
   },
 })
+
+setTimeout(() => {
+  displayDialog.value = false
+  console.log('executed')
+}, 10000)
 </script>
