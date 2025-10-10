@@ -21,7 +21,7 @@
     "@fancy-crud/wrapper-element-plus": "workspace:^",
     "@vueuse/core": "^9.9.0",
     "element-plus": "^2.4.2",
-    "vue": "^3.3.4"
+    "vue": "^3.5.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.15",
