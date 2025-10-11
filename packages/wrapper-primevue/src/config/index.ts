@@ -49,4 +49,11 @@ export const styles = {
     style: { width: '50vw' },
   },
 
+  closeModalButton: {
+    severity: 'secondary',
+    rounded: true,
+    icon: 'pi pi-times',
+    text: true
+  }
+
 }

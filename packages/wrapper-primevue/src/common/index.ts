@@ -1,16 +1,15 @@
-import { ReturnObject } from '@fancy-crud/vue'
+import { ReturnObject, FwModal } from '@fancy-crud/vue'
 import FwButton from './FwButton.vue'
-import FwModal from './FwModal.vue'
 export * from './notify'
 // import WeLoadingIcon from './WeLoadingIcon.vue'
 
 export const common = ReturnObject({
   button: FwButton,
-  modal: FwModal,
+  modal: FwModal, // Uses the default general-purpose modal from @fancy-crud/vue
 })
 
 export {
   FwButton,
-  FwModal,
+  FwModal, // Re-export for convenience
   // WeLoadingIcon,
 }

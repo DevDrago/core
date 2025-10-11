@@ -4,7 +4,7 @@
   >
     <slot name="before-form-header" />
 
-    <f-form-header v-slot="bind" :title="props.settings.title" :mode="props.settings.mode">
+    <f-form-header @close="onAuxClick" v-slot="bind" v-bind="props.settings">
       <slot name="form-header" v-bind="bind" />
     </f-form-header>
 
@@ -106,10 +106,3 @@ class VueDispatchOnFailedFormEventHandler extends DispatchOnFailedFormEventHandl
 register(IDispatchOnSuccessFormEventHandler.name, VueDispatchOnSuccessFormEventHandler)
 register(IDispatchOnFailedFormEventHandler.name, VueDispatchOnFailedFormEventHandler)
 </script>
-
-<style lang="sass" scoped>
-.f-form
-  height: 100%
-  display: grid
-  grid-template-rows: auto 1fr auto
-</style>

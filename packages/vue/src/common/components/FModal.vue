@@ -95,6 +95,7 @@ export default defineComponent({
       
       const pos = stackPosition.value
       const isLeftStack = pos && typeof pos === 'string' && pos.startsWith('shifted-left-')
+      const isCenterStack = props.stackPosition === 'center'
       
       // Calculate dynamic positioning based on shift level
       // Pattern: X increases by 5% each level, Y increases gradually
@@ -112,9 +113,14 @@ export default defineComponent({
       }
       
       // Apply direction based on stack position
-      if (isLeftStack) {
+      if (isCenterStack) {
+        // Center stack: maintain centering while shifting
+        return `translate(calc(-50% + ${xOffset}%), ${yOffset}%)`
+      } else if (isLeftStack) {
+        // Left stack: shift to the left
         return `translate(-${xOffset}%, ${yOffset}%)`
       } else {
+        // Right stack: shift to the right
         return `translate(${xOffset}%, ${yOffset}%)`
       }
     })
@@ -251,37 +257,38 @@ export default defineComponent({
   pointer-events: none;
 }
 
-/* ========== NON-STACK MODAL (simple center modal) ========== */
+/* ========== NON-STACK MODAL (simple center modal - default centered) ========== */
 .fancy-modal-visible {
-  right: 2rem;
-  transform: translateX(0);
-  animation: slideInFromRight 0.5s ease-in-out;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: slideInFromRightCenter 0.5s ease-in-out;
 }
 
-@keyframes slideInFromRight {
+@keyframes slideInFromRightCenter {
   from {
-    transform: translateX(100vw);
+    transform: translateX(calc(-50% + 100vw));
   }
   to {
-    transform: translateX(0);
+    transform: translateX(-50%);
   }
 }
 
 /* ========== CENTER POSITION (First modal in stack - active-first) ========== */
 .fancy-modal-stack-center {
-  right: 2rem;
-  transform: translateX(100vw); /* Initially off-screen to the right */
+  left: 50%;
+  transform: translateX(calc(-50% + 100vw)); /* Initially off-screen to the right, but centered */
 }
 
 .fancy-modal-stack-center.fancy-modal-open {
-  transform: translateX(0); /* Slide to center position */
+  transform: translateX(-50%); /* Slide to center position */
 }
 
 /* Shifted center modals */
 .fancy-modal-stack-center.fancy-modal-shifted {
-  right: 2rem;
+  left: 50%;
   pointer-events: none;
   /* Transform is applied dynamically via inline styles for unlimited nesting */
+  /* Note: inline transform from JS will override the translateX(-50%) */
 }
 
 /* ========== RIGHT POSITION STACK ========== */

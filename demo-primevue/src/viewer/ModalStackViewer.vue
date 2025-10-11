@@ -949,6 +949,36 @@ const artistsForm = useForm({
       placeholder: 'Enter artist name',
       modelValue: '',
     },
+    name_1: {
+      type: FieldType.text,
+      label: 'Artist Name',
+      placeholder: 'Enter artist name',
+      modelValue: '',
+    },
+    name_2: {
+      type: FieldType.text,
+      label: 'Artist Name',
+      placeholder: 'Enter artist name',
+      modelValue: '',
+    },
+    name_3: {
+      type: FieldType.text,
+      label: 'Artist Name',
+      placeholder: 'Enter artist name',
+      modelValue: '',
+    },
+    name_4: {
+      type: FieldType.text,
+      label: 'Artist Name',
+      placeholder: 'Enter artist name',
+      modelValue: '',
+    },
+    name_5: {
+      type: FieldType.text,
+      label: 'Artist Name',
+      placeholder: 'Enter artist name',
+      modelValue: '',
+    },
     genre: {
       type: FieldType.select,
       label: 'Genre',
@@ -971,6 +1001,7 @@ const artistsForm = useForm({
   },
   settings: () => ({
     title: '{{ Create Artist | Edit Artist }}',
+    showCloseButton: true,
   }),
 })
 
