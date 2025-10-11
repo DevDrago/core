@@ -28,7 +28,7 @@ export function notify(defaults?: any) {
       
       toastInstance.add({
         severity,
-        summary: rawNotification.title || '',
+        // summary: rawNotification.title || '',
         detail: rawNotification.message || '',
         life: 3000,
         ..._defaults,

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Toast />
+    <!-- <Toast /> -->
     <f-sidebar>
       <f-sidebar-item title="Forms" />
       <f-sidebar-item
@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts" setup>
-import Toast from 'primevue/toast'
+// import Toast from 'primevue/toast'
 import FSidebar from './viewer/FSidebar.vue'
 import FSidebarItem from './viewer/FSidebarItem.vue'
 import FFormViewer from './viewer/FFormViewer.vue'

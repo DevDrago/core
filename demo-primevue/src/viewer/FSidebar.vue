@@ -1,7 +1,7 @@
 <template>
   <section class="grid grid-cols-12 gap-2 h-screen bg-orange-50/20">
     <aside
-      class="w-full h-full bg-gray-50 dark:bg-gray-800 col-span-3"
+      class="w-full h-full bg-red-50 col-span-3"
       aria-label="Sidebar"
     >
       <div class="overflow-y-auto py-4 px-3">

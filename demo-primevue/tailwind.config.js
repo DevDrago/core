@@ -4,14 +4,11 @@ import { blue, gray, red, slate } from 'tailwindcss/colors'
 
 module.exports = {
   darkMode: 'class',
-  corePlugins: {
-    preflight: false,
-  },
 
   content: [
     './index.html',
-    './src/**/*.{vue,js,ts,sass, scss}',
-    './node_modules/@fancy-crud/vue/**/*.js',
+    './src/**/*.{vue,js,ts,sass,scss,css}',
+    './node_modules/@fancy-crud/vue/**/*.{js,vue,css}',
   ],
   theme: {
     extend: {
@@ -25,5 +22,3 @@ module.exports = {
   },
   plugins: [],
 }
-
-

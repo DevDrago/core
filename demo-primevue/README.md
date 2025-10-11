@@ -1,156 +1,42 @@
-# Fancy CRUD - PrimeVue Demo
+# demo-primevue
 
-This is a demo application showcasing the Fancy CRUD library with PrimeVue components.
+This template should help get you started developing with Vue 3 in Vite.
 
-## Getting Started
+## Recommended IDE Setup
 
-### Installation
+[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-From the root of the monorepo, install dependencies:
+## Recommended Browser Setup
 
-```bash
+- Chromium-based browsers (Chrome, Edge, Brave, etc.):
+  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
+  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
+- Firefox:
+  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
+  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+
+## Type Support for `.vue` Imports in TS
+
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vite.dev/config/).
+
+## Project Setup
+
+```sh
 pnpm install
 ```
 
-### Running the Demo
+### Compile and Hot-Reload for Development
 
-You can run the demo in two ways:
-
-**Option 1: From the root directory**
-```bash
-pnpm demo:primevue
-```
-
-**Option 2: From the demo-primevue directory**
-```bash
-cd demo-primevue
+```sh
 pnpm dev
 ```
 
-The demo will be available at `http://localhost:9094`
+### Type-Check, Compile and Minify for Production
 
-## Features Demonstrated
-
-This demo showcases:
-
-- ✅ Text input fields
-- ✅ Date picker
-- ✅ Password input with toggle
-- ✅ Select dropdown
-- ✅ Checkbox (single and multiple)
-- ✅ Radio buttons
-- ✅ Color picker
-- ✅ Textarea
-- ✅ File upload
-- ✅ Complete forms
-- ✅ Data tables with pagination
-- ✅ Toast notifications
-
-## Tech Stack
-
-- **Vue 3** - Progressive JavaScript framework
-- **PrimeVue** - Rich UI component library
-- **Fancy CRUD** - CRUD automation library
-- **TypeScript** - Type-safe development
-- **Vite** - Fast build tool
-- **Tailwind CSS** - Utility-first CSS framework
-
-## Project Structure
-
-```
-demo-primevue/
-├── src/
-│   ├── App.vue              # Main application component
-│   ├── main.ts              # Application entry point
-│   ├── plugins/
-│   │   ├── fancy-crud.ts    # Fancy CRUD configuration
-│   │   └── TheMagic.vue     # Demo component
-│   ├── modules/
-│   │   └── axios.ts         # HTTP client configuration
-│   ├── styles/
-│   │   └── main.sass        # Global styles
-│   └── viewer/              # Demo viewer components
-│       ├── FCheckboxViewer.vue
-│       ├── FColorViewer.vue
-│       ├── FDateViewer.vue
-│       ├── FFileViewer.vue
-│       ├── FFormViewer.vue
-│       ├── FInputViewer.vue
-│       ├── FPasswordViewer.vue
-│       ├── FRadioViewer.vue
-│       ├── FSelectViewer.vue
-│       ├── FSidebar.vue
-│       ├── FSidebarItem.vue
-│       ├── FTableViewer.vue
-│       └── FTextareaViewer.vue
-├── index.html
-├── package.json
-├── vite.config.ts
-└── tailwind.config.js
-```
-
-## Configuration
-
-The Fancy CRUD configuration is located in `src/plugins/fancy-crud.ts`:
-
-```typescript
-import { defineConfig } from '@fancy-crud/vue'
-import { useToast } from 'primevue/usetoast'
-import { components, notify, styles } from '@fancy-crud/wrapper-primevue'
-
-const toast = useToast()
-const notifyInstance = notify()
-notifyInstance.setToastInstance(toast)
-
-export default defineConfig({
-  components,     // PrimeVue wrapper components
-  styles,         // Button and modal styles
-  toast: notifyInstance,  // Toast notification service
-  // ... more configuration
-})
-```
-
-## PrimeVue Integration
-
-This demo uses:
-- **PrimeVue 3.50+** - Component library
-- **PrimeIcons** - Icon set
-- **Lara Light Blue** - Default theme
-
-The PrimeVue Toast service is initialized in `main.ts` and configured for use with Fancy CRUD notifications.
-
-## Development
-
-### Hot Module Replacement
-
-The demo supports HMR, so changes to components will be reflected immediately without a full page reload.
-
-### TypeScript Support
-
-Full TypeScript support is enabled with auto-generated type declarations for components and auto-imports.
-
-## Building for Production
-
-To build the wrapper package:
-
-```bash
-# From root
-pnpm build:w-primevue
-
-# Or
-cd packages/wrapper-primevue
+```sh
 pnpm build
 ```
-
-## Related Demos
-
-- `demo-element-plus` - Element Plus demo
-- `demo-quasar` - Quasar demo
-- `demo-vuetify` - Vuetify demo
-- `demo-oruga` - Oruga UI demo
-
-## License
-
-MIT © Christopher A. Flores
-
-

@@ -1,0 +1,4 @@
+@import "tailwindcss";
+@import "tailwindcss-primeui";
+@import '@fancy-crud/vue/dist/fancy-crud-vue.css'
+@config '../tailwind.config.js'

@@ -26,21 +26,21 @@
   "peerDependencies": {
     "@fancy-crud/core": "workspace:^",
     "@fancy-crud/vue": "workspace:^",
-    "vuetify": "^3.3.23",
     "@vueuse/core": "^12.7.0",
-    "vue": "^3.2.19"
+    "vue": "^3.2.19",
+    "vuetify": "^3.3.23"
   },
   "dependencies": {
     "@fancy-crud/core": "workspace:^",
     "@fancy-crud/vue": "workspace:^",
-    "vuetify": "^3.3.23",
-    "@vueuse/core": "^12.7.0",
-    "vue": "^3.5.0"
+    "@vueuse/core": "^13.9.0",
+    "vue": "^3.5.22",
+    "vuetify": "^3.10.5"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.15",
-    "postcss": "^8.4.28",
-    "tailwindcss": "^3.3.4"
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.14"
   },
   "publishConfig": {
     "access": "public"
