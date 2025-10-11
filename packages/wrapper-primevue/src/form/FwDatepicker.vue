@@ -1,14 +1,14 @@
 <template>
-  <we-field v-bind="computedAttrs" :label="props.field.label" :message="hintText" :has-field-errors="hasFieldErrors">
-    <ColorPicker v-bind="props.field" v-model="modelValue" :class="{ 'p-invalid': hasFieldErrors }" />
-  </we-field>
+  <fw-field v-bind="computedAttrs" :label="props.field.label" :message="hintText" :has-field-errors="hasFieldErrors">
+    <DatePicker v-bind="props.field" v-model="modelValue" :class="{ 'p-invalid': hasFieldErrors }" class="w-full" />
+  </fw-field>
 </template>
 
 <script lang="ts" setup>
-import ColorPicker from 'primevue/colorpicker'
+import DatePicker from 'primevue/datepicker'
 import type { NormalizedTextField } from '@fancy-crud/vue'
 import { useTextField } from '@fancy-crud/vue'
-import WeField from './WeField.vue'
+import FwField from './FwField.vue'
 
 const props = defineProps<{
   formId: symbol

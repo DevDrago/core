@@ -1,5 +1,5 @@
 <template>
-  <we-field
+  <fw-field
     :label="props.field.label"
     :message="props.field.hintText"
     :has-field-errors="hasFieldErrors"
@@ -15,14 +15,14 @@
         <p>{{ props.field.placeholder || 'Drag and drop files here to upload.' }}</p>
       </template>
     </FileUpload>
-  </we-field>
+  </fw-field>
 </template>
 
 <script lang="ts" setup>
 import FileUpload from 'primevue/fileupload'
 import type { NormalizedFileField } from '@fancy-crud/vue'
 import { useFileField } from '@fancy-crud/vue'
-import WeField from './WeField.vue'
+import FwField from './FwField.vue'
 
 const props = defineProps<{
   formId: symbol

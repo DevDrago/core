@@ -5,40 +5,40 @@ export const styles = {
 
   auxButton: {
     severity: 'secondary',
-    outlined: true,
+    text: true
   },
 
   addButton: {
     rounded: true,
     icon: 'pi pi-plus',
     severity: 'primary',
-    outlined: true,
+    text: true
   },
 
   editButton: {
     rounded: true,
     icon: 'pi pi-pencil',
     severity: 'info',
-    outlined: true,
+    text: true
   },
 
   removeButton: {
     rounded: true,
     icon: 'pi pi-trash',
     severity: 'danger',
-    outlined: true,
+    text: true
   },
 
   dumpButton: {
     rounded: true,
     icon: 'pi pi-download',
     severity: 'info',
-    outlined: true,
+    text: true
   },
 
   confirmButton: {
     severity: 'danger',
-    outlined: true,
+    text: true
   },
 
   cancelButton: {

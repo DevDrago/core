@@ -3,7 +3,7 @@
     <f-table-header-actions v-bind="tableHeaderVBind" />
   </slot>
 
-  <f-modal v-model="table.settings.displayFormDialog" v-bind="table.settings.modal">
+  <f-modal v-model="table.settings.displayFormDialog" v-bind="table.settings.modal" :form="props.form">
     <slot name="table-form" v-bind="tableFormVBind">
       <div v-if="tableForm.settings.loading" class="loader-wrapper">
         <div :class="{ loader: tableForm.settings.loading }" />
@@ -29,7 +29,7 @@
   </slot>
 
   <slot name="table-footer" v-bind="tableFooterVBind">
-    <div v-if="!props.pagination.hidden" class="flex justify-between mt-4">
+    <div v-if="!props.pagination.hidden" class="flex flex-col justify-between mt-4">
       <f-table-footer v-bind="tableFooterVBind" />
     </div>
   </slot>

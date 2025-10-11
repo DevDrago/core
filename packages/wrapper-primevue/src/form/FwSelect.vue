@@ -3,7 +3,7 @@ import Select from 'primevue/select'
 import type { NormalizedSelectField } from '@fancy-crud/vue'
 import type { PropType } from 'vue'
 import { useSelectField } from '@fancy-crud/vue'
-import WeField from './WeField.vue'
+import FwField from './FwField.vue'
 
 export default defineComponent({
   props: {
@@ -28,7 +28,7 @@ export default defineComponent({
     })
 
     return () =>
-      h(WeField, { 
+      h(FwField, { 
         ...props.field.wrapper, 
         label: props.field.label, 
         message: hintText.value, 

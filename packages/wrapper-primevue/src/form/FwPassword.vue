@@ -1,14 +1,14 @@
 <template>
-  <we-field v-bind="computedAttrs" :label="props.field.label" :message="hintText" :has-field-errors="hasFieldErrors">
-    <DatePicker v-bind="props.field" v-model="modelValue" :class="{ 'p-invalid': hasFieldErrors }" class="w-full" />
-  </we-field>
+  <fw-field v-bind="computedAttrs" :label="props.field.label" :message="hintText" :has-field-errors="hasFieldErrors">
+    <Password v-bind="props.field" v-model="modelValue" :class="{ 'p-invalid': hasFieldErrors }" class="w-full" :inputClass="'w-full'" :feedback="false" toggleMask />
+  </fw-field>
 </template>
 
 <script lang="ts" setup>
-import DatePicker from 'primevue/datepicker'
+import Password from 'primevue/password'
 import type { NormalizedTextField } from '@fancy-crud/vue'
 import { useTextField } from '@fancy-crud/vue'
-import WeField from './WeField.vue'
+import FwField from './FwField.vue'
 
 const props = defineProps<{
   formId: symbol

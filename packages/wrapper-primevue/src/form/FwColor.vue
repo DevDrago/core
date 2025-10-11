@@ -1,14 +1,14 @@
 <template>
-  <we-field v-bind="computedAttrs" :label="props.field.label" :message="hintText" :has-field-errors="hasFieldErrors">
-    <Password v-bind="props.field" v-model="modelValue" :class="{ 'p-invalid': hasFieldErrors }" class="w-full" :inputClass="'w-full'" :feedback="false" toggleMask />
-  </we-field>
+  <fw-field v-bind="computedAttrs" :label="props.field.label" :message="hintText" :has-field-errors="hasFieldErrors">
+    <ColorPicker v-bind="props.field" v-model="modelValue" :class="{ 'p-invalid': hasFieldErrors }" />
+  </fw-field>
 </template>
 
 <script lang="ts" setup>
-import Password from 'primevue/password'
+import ColorPicker from 'primevue/colorpicker'
 import type { NormalizedTextField } from '@fancy-crud/vue'
 import { useTextField } from '@fancy-crud/vue'
-import WeField from './WeField.vue'
+import FwField from './FwField.vue'
 
 const props = defineProps<{
   formId: symbol

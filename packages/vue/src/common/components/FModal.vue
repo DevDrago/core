@@ -2,8 +2,8 @@
 import { components } from '@fancy-crud/core'
 
 export default defineComponent({
-  setup(_, { attrs, slots }) {
-    return () => h(components.modal, attrs, slots)
+  setup(props, { attrs, slots }) {
+    return () => h(components.modal, { ...props, ...attrs }, slots)
   },
 })
 </script>
