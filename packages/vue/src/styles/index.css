@@ -11,6 +11,7 @@
 
   .f-form__body {
     @apply grid grid-cols-12 md:gap-x-8;
+    align-content: start;
   }
 
   .f-form__footer {

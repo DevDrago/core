@@ -87,7 +87,18 @@
     <!-- Demo Table - shows FTable with modal stack integration -->
     <div class="mb-6">
       <h2 class="text-2xl font-semibold mb-3">FTable with Nested Modal Support</h2>
-      <f-table v-bind="artistsTable" />
+      <f-table v-bind="artistsTable">
+        <template #after-field-name>
+          <div class="col-span-12">
+            <Button
+              label="Right Stack (Default)"
+              icon="pi pi-arrow-right"
+              @click="showRightModal1 = true"
+              severity="primary"
+            />
+          </div>
+        </template>
+      </f-table>
     </div>
 
     <!-- Simple Modal - Level 1 -->
@@ -432,10 +443,71 @@
           </p>
         </div>
 
+        <div class="flex gap-2 mt-4">
+          <Button
+            label="Open Level 4"
+            icon="pi pi-plus"
+            @click="showRightModal4 = true"
+            severity="primary"
+          />
+          <Button
+            label="Go Back"
+            icon="pi pi-arrow-left"
+            @click="showRightModal3 = false"
+            severity="secondary"
+          />
+        </div>
+      </div>
+    </f-modal>
+
+    <f-modal v-model="showRightModal4" modal-id="right-modal-4" stack-position="right">
+      <div class="p-6 border-l-4 border-blue-800">
+        <h2 class="text-2xl font-bold mb-4 text-blue-900">🔵 Right Stack - Level 4</h2>
+        <p class="mb-4">
+          Now we're getting deep! All previous modals (1, 2, 3) are stacked progressively to the right.
+        </p>
+
+        <div class="border-t pt-4">
+          <p class="text-sm text-gray-600">
+            <strong>Position:</strong> {{ getPositionLabel('right-modal-4') }}
+          </p>
+        </div>
+
+        <div class="flex gap-2 mt-4">
+          <Button
+            label="Open Level 5"
+            icon="pi pi-plus"
+            @click="showRightModal5 = true"
+            severity="primary"
+          />
+          <Button
+            label="Go Back"
+            icon="pi pi-arrow-left"
+            @click="showRightModal4 = false"
+            severity="secondary"
+          />
+        </div>
+      </div>
+    </f-modal>
+
+    <f-modal v-model="showRightModal5" modal-id="right-modal-5" stack-position="right">
+      <div class="p-6 border-l-4 border-blue-900">
+        <h2 class="text-2xl font-bold mb-4 text-blue-950">🔵 Right Stack - Level 5</h2>
+        <p class="mb-4">
+          Maximum depth! All previous modals (1, 2, 3, 4) are cascading to the right with progressive offsets.
+          The system supports unlimited nesting!
+        </p>
+
+        <div class="border-t pt-4">
+          <p class="text-sm text-gray-600">
+            <strong>Position:</strong> {{ getPositionLabel('right-modal-5') }}
+          </p>
+        </div>
+
         <Button
           label="Go Back"
           icon="pi pi-arrow-left"
-          @click="showRightModal3 = false"
+          @click="showRightModal5 = false"
           severity="secondary"
           class="mt-4"
         />
@@ -531,10 +603,71 @@
           </p>
         </div>
 
+        <div class="flex gap-2 mt-4">
+          <Button
+            label="Open Level 4"
+            icon="pi pi-plus"
+            @click="showLeftModal4 = true"
+            severity="success"
+          />
+          <Button
+            label="Go Back"
+            icon="pi pi-arrow-right"
+            @click="showLeftModal3 = false"
+            severity="secondary"
+          />
+        </div>
+      </div>
+    </f-modal>
+
+    <f-modal v-model="showLeftModal4" modal-id="left-modal-4" stack-position="left">
+      <div class="p-6 border-l-4 border-green-800">
+        <h2 class="text-2xl font-bold mb-4 text-green-900">🟢 Left Stack - Level 4</h2>
+        <p class="mb-4">
+          Deep left stacking! All previous modals (1, 2, 3) are cascading to the ← left with progressive offsets.
+        </p>
+
+        <div class="border-t pt-4">
+          <p class="text-sm text-gray-600">
+            <strong>Position:</strong> {{ getPositionLabel('left-modal-4') }}
+          </p>
+        </div>
+
+        <div class="flex gap-2 mt-4">
+          <Button
+            label="Open Level 5"
+            icon="pi pi-plus"
+            @click="showLeftModal5 = true"
+            severity="success"
+          />
+          <Button
+            label="Go Back"
+            icon="pi pi-arrow-right"
+            @click="showLeftModal4 = false"
+            severity="secondary"
+          />
+        </div>
+      </div>
+    </f-modal>
+
+    <f-modal v-model="showLeftModal5" modal-id="left-modal-5" stack-position="left">
+      <div class="p-6 border-l-4 border-green-900">
+        <h2 class="text-2xl font-bold mb-4 text-green-950">🟢 Left Stack - Level 5</h2>
+        <p class="mb-4">
+          Maximum left depth! All previous modals (1, 2, 3, 4) are cascading to the ← left with progressive offsets.
+          Stack direction is completely reversed!
+        </p>
+
+        <div class="border-t pt-4">
+          <p class="text-sm text-gray-600">
+            <strong>Position:</strong> {{ getPositionLabel('left-modal-5') }}
+          </p>
+        </div>
+
         <Button
           label="Go Back"
           icon="pi pi-arrow-right"
-          @click="showLeftModal3 = false"
+          @click="showLeftModal5 = false"
           severity="secondary"
           class="mt-4"
         />
@@ -630,10 +763,71 @@
           </p>
         </div>
 
+        <div class="flex gap-2 mt-4">
+          <Button
+            label="Open Level 4"
+            icon="pi pi-plus"
+            @click="showCenterModal4 = true"
+            severity="help"
+          />
+          <Button
+            label="Go Back"
+            icon="pi pi-arrow-left"
+            @click="showCenterModal3 = false"
+            severity="secondary"
+          />
+        </div>
+      </div>
+    </f-modal>
+
+    <f-modal v-model="showCenterModal4" modal-id="center-modal-4" stack-position="center">
+      <div class="p-6 border-l-4 border-purple-800">
+        <h2 class="text-2xl font-bold mb-4 text-purple-900">🟣 Center Stack - Level 4</h2>
+        <p class="mb-4">
+          Deep center stacking! All modals remain centered with progressive layering (1, 2, 3 in background).
+        </p>
+
+        <div class="border-t pt-4">
+          <p class="text-sm text-gray-600">
+            <strong>Position:</strong> {{ getPositionLabel('center-modal-4') }}
+          </p>
+        </div>
+
+        <div class="flex gap-2 mt-4">
+          <Button
+            label="Open Level 5"
+            icon="pi pi-plus"
+            @click="showCenterModal5 = true"
+            severity="help"
+          />
+          <Button
+            label="Go Back"
+            icon="pi pi-arrow-left"
+            @click="showCenterModal4 = false"
+            severity="secondary"
+          />
+        </div>
+      </div>
+    </f-modal>
+
+    <f-modal v-model="showCenterModal5" modal-id="center-modal-5" stack-position="center">
+      <div class="p-6 border-l-4 border-purple-900">
+        <h2 class="text-2xl font-bold mb-4 text-purple-950">🟣 Center Stack - Level 5</h2>
+        <p class="mb-4">
+          Maximum center depth! All previous modals (1, 2, 3, 4) are layered in the center with progressive offsets.
+          Beautiful symmetry!
+        </p>
+
+        <div class="border-t pt-4">
+          <p class="text-sm text-gray-600">
+            <strong>Position:</strong> {{ getPositionLabel('center-modal-5') }}
+          </p>
+        </div>
+
         <Button
           label="Go Back"
           icon="pi pi-arrow-left"
-          @click="showCenterModal3 = false"
+          @click="showCenterModal5 = false"
           severity="secondary"
           class="mt-4"
         />
@@ -663,12 +857,18 @@ const showTableModal = ref(false)
 const showRightModal1 = ref(false)
 const showRightModal2 = ref(false)
 const showRightModal3 = ref(false)
+const showRightModal4 = ref(false)
+const showRightModal5 = ref(false)
 const showLeftModal1 = ref(false)
 const showLeftModal2 = ref(false)
 const showLeftModal3 = ref(false)
+const showLeftModal4 = ref(false)
+const showLeftModal5 = ref(false)
 const showCenterModal1 = ref(false)
 const showCenterModal2 = ref(false)
 const showCenterModal3 = ref(false)
+const showCenterModal4 = ref(false)
+const showCenterModal5 = ref(false)
 
 // Helper to get readable position label
 function getPositionLabel(modalId: string) {

@@ -158,18 +158,24 @@ export default defineComponent({
 
     // Calculate modal inline styles
     const modalStyles = computed(() => {
-      if (!props.modalId) return {}
-      
       const styles: any = {}
       
-      const zIndex = modalStack?.getModalZIndex(props.modalId!)
-      if (zIndex) {
-        styles.zIndex = zIndex
-      }
+      // Stack-specific styles
+      if (props.modalId) {
+        const zIndex = modalStack?.getModalZIndex(props.modalId!)
+        if (zIndex) {
+          styles.zIndex = zIndex
+        }
 
-      // Apply dynamic transform for shifted modals
-      if (shiftLevel.value !== null && dynamicTransform.value) {
-        styles.transform = dynamicTransform.value
+        // Apply dynamic transform for shifted modals
+        if (shiftLevel.value !== null && dynamicTransform.value) {
+          styles.transform = dynamicTransform.value
+        }
+      }
+      
+      // Merge with user-provided styles from attrs
+      if (attrs.style && typeof attrs.style === 'object') {
+        Object.assign(styles, attrs.style)
       }
 
       return styles
@@ -177,9 +183,12 @@ export default defineComponent({
 
     // Computed props to pass to wrapper
     const wrapperProps = computed(() => {
+      // Exclude 'style' from attrs since we handle it in modalStyles
+      const { style, ...restAttrs } = attrs
+      
       const base = {
         ...props,
-        ...attrs,
+        ...restAttrs,
       }
 
       // Add stack-specific props if in stack
@@ -196,7 +205,10 @@ export default defineComponent({
         }
       }
 
-      return base
+      return {
+        ...base,
+        'data-fancy-modal-styles': modalStyles.value,
+      }
     })
 
     return () => h(components.modal, wrapperProps.value, slots)
