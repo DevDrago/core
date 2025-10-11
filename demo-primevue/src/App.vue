@@ -36,6 +36,7 @@ import FColor from './viewer/FColorViewer.vue'
 import FTextareaViewer from './viewer/FTextareaViewer.vue'
 import FFileViewer from './viewer/FFileViewer.vue'
 import FTableViewer from './viewer/FTableViewer.vue'
+import ModalStackViewer from './viewer/ModalStackViewer.vue'
 
 const inputs = {
   text: FInputViewer,
@@ -49,6 +50,7 @@ const inputs = {
   file: FFileViewer,
   genreForm: FFormViewer,
   table: FTableViewer,
+  modalStack: ModalStackViewer,
 }
 </script>
 
