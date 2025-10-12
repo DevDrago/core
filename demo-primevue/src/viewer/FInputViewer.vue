@@ -1,17 +1,13 @@
 <template>
-  <div class="bg-white rounded-xl p-4">
-    <f-form v-bind="form">
-      <template #form-footer="bind">
-        <f-form-footer v-bind="bind" />
-      </template>
-    </f-form>
+  <div class="bg-white rounded-xl p-4 shadow-sm">
+    <f-form v-bind="form" />
   </div>
-  <input v-model="title">
 </template>
 
 <script lang='ts' setup>
 import { FieldType, useForm, FFormFooter } from '@fancy-crud/vue'
 import { Bus, ResetFieldsByFormIdCommand } from '@fancy-crud/core'
+import InputText from 'primevue/inputtext'
 
 const bus = new Bus()
 
@@ -23,9 +19,11 @@ const form = useForm({
       type: FieldType.text,
       label: title.value,
       placeholder: 'Como asi pues?',
-      hintText: 'Display some message',
+      // hintText: 'Display some message',
       modelValue: title.value,
-      // rules: value => ({ value, rule: string([email()]) }),
+      rules: value => {
+        return value === 'root' ? 'Root is not allowed' : true
+      },
       wrapper: {
         class: 'col-span-6',
       },

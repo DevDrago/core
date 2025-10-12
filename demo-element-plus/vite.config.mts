@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+import tailwindcss from '@tailwindcss/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig(() => {
@@ -17,6 +18,7 @@ export default defineConfig(() => {
 
         '@fancy-crud/wrapper-vuetify': `${path.resolve(__dirname, '../packages/wrapper-vuetify/src')}/`,
         '@fancy-crud/wrapper-oruga-ui': `${path.resolve(__dirname, '../packages/wrapper-oruga-ui/src')}/`,
+        '@fancy-crud/wrapper-element-plus': `${path.resolve(__dirname, '../packages/wrapper-element-plus/src')}/`,
 
         '@fancy-crud/plugin-rule-parsers': `${path.resolve(__dirname, '../packages/plugin-rule-parsers/src')}/`,
         '@fancy-crud/plugin-vue3-toastify': `${path.resolve(__dirname, '../packages/plugin-vue3-toastify/src')}/`,
@@ -27,6 +29,7 @@ export default defineConfig(() => {
     },
     plugins: [
       vue(),
+      tailwindcss(),
       AutoImport({
         imports: [
           'vue',

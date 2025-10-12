@@ -13,9 +13,9 @@
   >
     <a
       href="#"
-      class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+      class="flex items-center p-2 text-base font-normal text-gray-800 rounded-lg hover:bg-gray-100"
     >
-      <span class="ml-3">
+      <span class="pl-8">
         <slot>{{ props.label }}</slot>
       </span>
     </a>

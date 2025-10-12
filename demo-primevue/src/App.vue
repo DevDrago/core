@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Toast />
+    <!-- <Toast /> -->
     <f-sidebar>
       <f-sidebar-item title="Forms" />
       <f-sidebar-item
@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts" setup>
-import Toast from 'primevue/toast'
+// import Toast from 'primevue/toast'
 import FSidebar from './viewer/FSidebar.vue'
 import FSidebarItem from './viewer/FSidebarItem.vue'
 import FFormViewer from './viewer/FFormViewer.vue'
@@ -36,6 +36,7 @@ import FColor from './viewer/FColorViewer.vue'
 import FTextareaViewer from './viewer/FTextareaViewer.vue'
 import FFileViewer from './viewer/FFileViewer.vue'
 import FTableViewer from './viewer/FTableViewer.vue'
+import ModalStackViewer from './viewer/ModalStackViewer.vue'
 
 const inputs = {
   text: FInputViewer,
@@ -49,6 +50,7 @@ const inputs = {
   file: FFileViewer,
   genreForm: FFormViewer,
   table: FTableViewer,
+  modalStack: ModalStackViewer,
 }
 </script>
 

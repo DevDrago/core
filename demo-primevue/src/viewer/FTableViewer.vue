@@ -1,18 +1,9 @@
 <template>
   <div class="pb-5">
-    {{ form.settings.url }}
     <div>
-      <f-form v-bind="form" />
-      <f-table v-bind="table">
-        <template #before-field-name>
-          <input v-model="randomText" type="text" class="border px-4 py-2">
-        </template>
-      </f-table>
+      <f-table v-bind="table" />
     </div>
   </div>
-  <input v-model="randomText" type="text" class="border px-4 py-2">
-  <br>
-  <br>
 </template>
 
 <script lang='ts' setup>
@@ -70,6 +61,9 @@ const form = useForm({
       url: '{{ artists/ | artists/:name }}',
       title: '{{ Crear artista | Actualizar artista }}',
       count: randomText.value,
+      modal: {
+        header: ' Hello',
+      }
     }
   },
 })

@@ -3,6 +3,9 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+import tailwindcss from '@tailwindcss/vite'
+
+import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
 
 // https://vitejs.dev/config/
 export default defineConfig(() => {
@@ -10,14 +13,12 @@ export default defineConfig(() => {
     resolve: {
       alias: {
         '@fancy-crud/vue/dist': `${path.resolve(__dirname, '../packages/vue/dist')}/`,
-        '@fancy-crud/wrapper-oruga-ui/dist': `${path.resolve(__dirname, '../packages/wrapper-oruga-ui/dist')}/`,
+        '@fancy-crud/wrapper-quasar/dist': `${path.resolve(__dirname, '../packages/wrapper-oruga-ui/dist')}/`,
 
         '@fancy-crud/vue': `${path.resolve(__dirname, '../packages/vue/src')}/`,
         '@fancy-crud/core': `${path.resolve(__dirname, '../packages/core/src')}/`,
 
-        '@fancy-crud/wrapper-vuetify': `${path.resolve(__dirname, '../packages/wrapper-vuetify/src')}/`,
-        '@fancy-crud/wrapper-oruga-ui': `${path.resolve(__dirname, '../packages/wrapper-oruga-ui/src')}/`,
-        '@fancy-crud/wrapper-element-plus': `${path.resolve(__dirname, '../packages/wrapper-element-plus/src')}/`,
+        '@fancy-crud/wrapper-quasar': `${path.resolve(__dirname, '../packages/wrapper-quasar/src')}/`,
 
         '@fancy-crud/plugin-rule-parsers': `${path.resolve(__dirname, '../packages/plugin-rule-parsers/src')}/`,
         '@fancy-crud/plugin-vue3-toastify': `${path.resolve(__dirname, '../packages/plugin-vue3-toastify/src')}/`,
@@ -27,7 +28,11 @@ export default defineConfig(() => {
       },
     },
     plugins: [
-      vue(),
+      vue({
+        template: { transformAssetUrls },
+      }),
+      quasar(),
+      tailwindcss(),
       AutoImport({
         imports: [
           'vue',
@@ -45,7 +50,6 @@ export default defineConfig(() => {
       Components({
         dirs: [
           'src/**/components',
-          'node_modules/@oruga-ui/oruga-next/src/components/**',
         ],
 
         // allow auto import and register components used in markdown

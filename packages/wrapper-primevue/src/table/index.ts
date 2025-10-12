@@ -1,13 +1,13 @@
 import { ReturnObject } from '@fancy-crud/vue'
-import WeTableBody from './WeTableBody.vue'
-import WeTableFooter from './WeTableFooter.vue'
+import FwTableBody from './FwTableBody.vue'
+import FwTableFooter from './FwTableFooter.vue'
 
 export const table = ReturnObject({
-  tableBody: WeTableBody,
-  tableFooter: WeTableFooter,
+  tableBody: FwTableBody,
+  tableFooter: FwTableFooter,
 })
 
 export {
-  WeTableBody,
-  WeTableFooter,
+  FwTableBody,
+  FwTableFooter,
 }
