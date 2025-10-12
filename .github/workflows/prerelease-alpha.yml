@@ -11,17 +11,17 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [22.x]
         os: [ubuntu-latest]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v4
         with:
           version: 8
           run_install: |
@@ -52,7 +52,7 @@ jobs:
       toTag: ${{ steps.toTag.outputs.tag }}
     steps:
       - name: checkout code repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -94,12 +94,12 @@ jobs:
     if: ${{ needs.compute-new-tag-version.outputs.fromTag != needs.compute-new-tag-version.outputs.toTag }}
     steps:
       - name: checkout code repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: setup node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 16.x
 
@@ -139,7 +139,7 @@ jobs:
     if: ${{ needs.compute-new-tag-version.outputs.fromTag != needs.compute-new-tag-version.outputs.toTag }}
     steps:
       - name: checkout code repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
