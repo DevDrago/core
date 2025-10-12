@@ -985,6 +985,24 @@ const artistsForm = useForm({
       placeholder: 'Enter artist name',
       modelValue: '',
     },
+    name_7: {
+      type: FieldType.text,
+      label: 'Artist Name',
+      placeholder: 'Enter artist name',
+      modelValue: '',
+    },
+    name_8: {
+      type: FieldType.text,
+      label: 'Artist Name',
+      placeholder: 'Enter artist name',
+      modelValue: '',
+    },
+    name_9: {
+      type: FieldType.text,
+      label: 'Artist Name',
+      placeholder: 'Enter artist name',
+      modelValue: '',
+    },
     genre: {
       type: FieldType.select,
       label: 'Genre',
