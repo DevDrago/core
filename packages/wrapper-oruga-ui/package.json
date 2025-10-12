@@ -14,7 +14,6 @@
   },
   "main": "./dist/fancy-crud-wrapper-oruga-ui.js",
   "module": "./dist/fancy-crud-wrapper-oruga-ui.js",
-
   "types": "./dist/src/index.d.ts",
   "files": [
     "dist"
@@ -33,14 +32,14 @@
   "dependencies": {
     "@fancy-crud/core": "workspace:^",
     "@fancy-crud/vue": "workspace:^",
-    "@oruga-ui/oruga-next": "^0.7.0",
-    "@vueuse/core": "^12.7.0",
-    "vue": "^3.3.4"
+    "@oruga-ui/oruga-next": "^0.11.6",
+    "@vueuse/core": "^13.9.0",
+    "vue": "^3.5.22"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.15",
-    "postcss": "^8.4.28",
-    "tailwindcss": "^3.3.4"
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.14"
   },
   "publishConfig": {
     "access": "public"

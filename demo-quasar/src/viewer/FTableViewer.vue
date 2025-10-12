@@ -1,9 +1,6 @@
 <template>
   <div class="pb-5">
     <f-table v-bind="table">
-      <template #column-created_at>
-        <a href="https://google.com" class="underline text-primary-500" target="_blank">Haz click</a>
-      </template>
     </f-table>
   </div>
 </template>
@@ -105,7 +102,6 @@ const table = useTable({
   },
   settings: () => ({
     url: 'artists/',
-    columnsOrder: ['actions', '...'],
     displayFormDialog: displayDialog.value,
   }),
   pagination: {

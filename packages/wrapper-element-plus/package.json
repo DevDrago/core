@@ -31,17 +31,17 @@
     "vue": "^3.2.19"
   },
   "dependencies": {
-    "@element-plus/icons-vue": "^2.1.0",
+    "@element-plus/icons-vue": "^2.3.2",
     "@fancy-crud/core": "workspace:^",
     "@fancy-crud/vue": "workspace:^",
-    "@vueuse/core": "^12.7.0",
-    "element-plus": "2.5.0",
-    "vue": "^3.3.4"
+    "@vueuse/core": "^13.9.0",
+    "element-plus": "2.11.4",
+    "vue": "^3.5.22"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.15",
-    "postcss": "^8.4.28",
-    "tailwindcss": "^3.3.4"
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.14"
   },
   "publishConfig": {
     "access": "public"

@@ -11,21 +11,21 @@ import { name } from './package.json'
 export default defineConfig({
   resolve: {
     alias: {
-      '@packages/wrapper-oruga-ui/': `${path.resolve(__dirname, 'src')}/`,
+      '@packages/wrapper-primevue/': `${path.resolve(__dirname, 'src')}/`,
     },
   },
   build: {
     lib: {
       name,
       entry: path.resolve(__dirname, 'src/index.ts'),
-      fileName: 'fancy-crud-wrapper-oruga-ui',
+      fileName: 'fancy-crud-wrapper-primevue',
     },
     rollupOptions: {
-      external: ['vue', '@oruga-ui/oruga-next', '@fancy-crud/core', '@fancy-crud/vue'],
+      external: ['vue', '@primevue/primevue', '@fancy-crud/core', '@fancy-crud/vue'],
       output: {
         assetFileNames: (assetInfo) => {
           if (!assetInfo.name || assetInfo.name === 'style.css')
-            return 'fancy-crud-wrapper-oruga-ui.css'
+            return 'fancy-crud-wrapper-primevue.css'
           return assetInfo.name
         },
         exports: 'named',
