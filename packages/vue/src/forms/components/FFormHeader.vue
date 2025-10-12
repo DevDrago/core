@@ -1,5 +1,8 @@
 <template>
-  <header class="f-form__header">
+  <header 
+    class="f-form__header"
+    :class="{ 'f-form__header--shadow': isScrolledFromTop }"
+  >
     <slot v-bind="{ formModeTitle, title, mode }">
       <h3 class="f-form__header__title">
         {{ formModeTitle }}
@@ -31,6 +34,17 @@ const emit = defineEmits<{
 const bus = new Bus()
 
 const defaults = getDefaults()
+
+// Inject scroll state from FFormBody
+const formScrollState = inject<{
+  isScrolledFromTop: Ref<boolean>
+  isScrolledFromBottom: Ref<boolean>
+}>('formScrollState', {
+  isScrolledFromTop: ref(false),
+  isScrolledFromBottom: ref(false),
+})
+
+const isScrolledFromTop = formScrollState.isScrolledFromTop
 
 const formModeTitle = computed(() => bus.execute(
   new GetTitleByFormModeCommand(props.mode, props.title),

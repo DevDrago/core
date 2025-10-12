@@ -73,6 +73,15 @@ const { isFormValid } = useRules(
   props.fields, ruleConfigStore.searchById(props.id),
 )
 
+// Provide scroll state for header/footer shadows
+const isScrolledFromTop = ref(false)
+const isScrolledFromBottom = ref(false)
+
+provide('formScrollState', {
+  isScrolledFromTop,
+  isScrolledFromBottom,
+})
+
 const beforeAndAfterFieldSlots = computed(() => {
   return Object.entries(slots).filter(
     ([slotName]) => slotName.startsWith('before-') || slotName.startsWith('after-') || slotName.startsWith('field-'),
