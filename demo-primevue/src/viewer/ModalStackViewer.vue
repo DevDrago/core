@@ -399,7 +399,7 @@
       </div>
     </f-modal>
 
-    <f-modal v-model="showRightModal2" modal-id="right-modal-2" stack-position="right">
+    <f-modal v-model="showRightModal2" modal-id="right-modal-2">
       <div class="p-6 border-l-4 border-blue-600">
         <h2 class="text-2xl font-bold mb-4 text-blue-700">🔵 Right Stack - Level 2</h2>
         <p class="mb-4">
@@ -430,7 +430,7 @@
       </div>
     </f-modal>
 
-    <f-modal v-model="showRightModal3" modal-id="right-modal-3" stack-position="right">
+    <f-modal v-model="showRightModal3" modal-id="right-modal-3">
       <div class="p-6 border-l-4 border-blue-700">
         <h2 class="text-2xl font-bold mb-4 text-blue-800">🔵 Right Stack - Level 3</h2>
         <p class="mb-4">
@@ -460,7 +460,7 @@
       </div>
     </f-modal>
 
-    <f-modal v-model="showRightModal4" modal-id="right-modal-4" stack-position="right">
+    <f-modal v-model="showRightModal4" modal-id="right-modal-4">
       <div class="p-6 border-l-4 border-blue-800">
         <h2 class="text-2xl font-bold mb-4 text-blue-900">🔵 Right Stack - Level 4</h2>
         <p class="mb-4">
@@ -490,7 +490,7 @@
       </div>
     </f-modal>
 
-    <f-modal v-model="showRightModal5" modal-id="right-modal-5" stack-position="right">
+    <f-modal v-model="showRightModal5" modal-id="right-modal-5">
       <div class="p-6 border-l-4 border-blue-900">
         <h2 class="text-2xl font-bold mb-4 text-blue-950">🔵 Right Stack - Level 5</h2>
         <p class="mb-4">

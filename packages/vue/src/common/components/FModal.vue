@@ -98,9 +98,18 @@ export default defineComponent({
       const isCenterStack = props.stackPosition === 'center'
       
       // Calculate dynamic positioning based on shift level
-      // Pattern: X increases by 5% each level, Y increases gradually
-      const xOffset = 70 + (level * 5) // 75%, 80%, 85%, 90%, 95%, 100%, 105%...
+      let xOffset: number
       let yOffset = 0
+      
+      if (isCenterStack) {
+        // Center stack: smaller shift (25% base, increases by 5% each level)
+        // Pattern: 25%, 30%, 35%, 40%, 45%...
+        xOffset = 20 + (level * 5) // Shows 75% of background modals
+      } else {
+        // Left/Right stack: larger shift (75% base, increases by 5% each level)
+        // Pattern: 75%, 80%, 85%, 90%, 95%, 100%, 105%...
+        xOffset = 70 + (level * 5) // Shows 25% of background modals
+      }
       
       if (level >= 2) {
         yOffset = 2
@@ -114,7 +123,7 @@ export default defineComponent({
       
       // Apply direction based on stack position
       if (isCenterStack) {
-        // Center stack: maintain centering while shifting
+        // Center stack: maintain centering while shifting right
         return `translate(calc(-50% + ${xOffset}%), ${yOffset}%)`
       } else if (isLeftStack) {
         // Left stack: shift to the left
