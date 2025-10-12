@@ -14,7 +14,7 @@ export default defineComponent({
     },
     stackPosition: {
       type: String as PropType<ModalStackPosition>,
-      default: 'right',
+      default: 'center',
       validator: (value: string) => ['left', 'center', 'right'].includes(value),
     },
   },

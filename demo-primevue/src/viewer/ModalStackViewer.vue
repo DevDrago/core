@@ -355,7 +355,7 @@
     </f-modal>
 
     <!-- RIGHT STACK POSITION DEMOS -->
-    <f-modal v-model="showRightModal1" modal-id="right-modal-1" stack-position="right">
+    <f-modal v-model="showRightModal1" modal-id="right-modal-1">
       <div class="p-6 border-l-4 border-blue-500">
         <h2 class="text-2xl font-bold mb-4 text-blue-600">🔵 Right Stack - Level 1</h2>
         <p class="mb-4">
@@ -997,7 +997,7 @@ const artistsForm = useForm({
       placeholder: 'Enter artist name',
       modelValue: '',
     },
-    name_9: {
+    name_6: {
       type: FieldType.text,
       label: 'Artist Name',
       placeholder: 'Enter artist name',

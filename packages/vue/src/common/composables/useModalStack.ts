@@ -109,7 +109,7 @@ export function useModalStack() {
 
     const stackLength = modalStack.value.length
     const modalConfig = registeredModals.value.get(modalId)
-    const modalPosition = modalConfig?.position || 'right' // Default to right
+    const modalPosition = modalConfig?.position || 'center' // Default to center
 
     // Latest modal (active)
     if (index === stackLength - 1) {
@@ -159,7 +159,7 @@ export function useModalStack() {
    */
   const getModalStackPosition = (modalId: string): ModalStackPosition => {
     const modalConfig = registeredModals.value.get(modalId)
-    return modalConfig?.position || 'right'
+    return modalConfig?.position || 'center'
   }
 
   /**
