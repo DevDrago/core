@@ -27,6 +27,7 @@ declare global {
   const FFormFooter: typeof import('./src/forms/components/index')['FFormFooter']
   const FFormHeader: typeof import('./src/forms/components/index')['FFormHeader']
   const FModal: typeof import('./src/common/components/index')['FModal']
+  const FModalContent: typeof import('./src/common/components/index')['FModalContent']
   const FPassword: typeof import('./src/forms/components/index')['FPassword']
   const FRadio: typeof import('./src/forms/components/index')['FRadio']
   const FSelect: typeof import('./src/forms/components/index')['FSelect']
@@ -353,7 +354,7 @@ declare global {
   export type { Component, Slot, Slots, ComponentPublicInstance, ComputedRef, DirectiveBinding, ExtractDefaultPropTypes, ExtractPropTypes, ExtractPublicPropTypes, InjectionKey, PropType, Ref, ShallowRef, MaybeRef, MaybeRefOrGetter, VNode, WritableComputedRef } from 'vue'
   import('vue')
   // @ts-ignore
-  export type { ModalPosition, ModalConfig, ModalStackConfig } from './src/common/composables/useModalStack'
+  export type { ModalPosition, ModalStackPosition, ModalConfig, ModalStackConfig } from './src/common/composables/useModalStack'
   import('./src/common/composables/useModalStack')
   // @ts-ignore
   export type { TableStoreService } from './src/tables/composables/table-store.service'
@@ -389,6 +390,7 @@ declare module 'vue' {
     readonly FFormFooter: UnwrapRef<typeof import('./src/forms/components/index')['FFormFooter']>
     readonly FFormHeader: UnwrapRef<typeof import('./src/forms/components/index')['FFormHeader']>
     readonly FModal: UnwrapRef<typeof import('./src/common/components/index')['FModal']>
+    readonly FModalContent: UnwrapRef<typeof import('./src/common/components/index')['FModalContent']>
     readonly FPassword: UnwrapRef<typeof import('./src/forms/components/index')['FPassword']>
     readonly FRadio: UnwrapRef<typeof import('./src/forms/components/index')['FRadio']>
     readonly FSelect: UnwrapRef<typeof import('./src/forms/components/index')['FSelect']>

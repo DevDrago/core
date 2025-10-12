@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build && vue-tsc -p ./tsconfig.build.json --declaration --emitDeclarationOnly && tsc-alias --verbose -p ./tsconfig.build.json",
+    "build": "vite build",
     "build:no-ts": "vite build"
   },
   "peerDependencies": {
