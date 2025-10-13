@@ -45,7 +45,7 @@ export default defineComponent({
 
     return () => {
       // If in stack, always render (for transitions). Otherwise, conditionally render
-      const shouldRender = inStack.value || modelValue.value
+      const shouldRender = modelValue.value
       if (!shouldRender) return null
 
       // Build modal classes
