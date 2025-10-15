@@ -1,19 +1,16 @@
 <template>
-  
     <Select 
       v-model="state.pagination.perPage" 
       :options="props.pagination.rowsPerPageOptions"
       class="w-20"
     />
-    <!-- <div> -->
-      <Paginator
-        v-model:first="firstRecord"
-        :rows="state.pagination.perPage"
-        :totalRecords="props.pagination.count"
-        template="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink"
-      />
-    <!-- </div> -->
-  <!-- </div> -->
+
+    <Paginator
+      v-model:first="firstRecord"
+      :rows="state.pagination.perPage"
+      :totalRecords="props.pagination.count"
+      template="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink"
+    />
 </template>
 
 <script lang="ts" setup>
